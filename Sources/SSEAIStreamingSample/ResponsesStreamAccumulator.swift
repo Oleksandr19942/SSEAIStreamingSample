@@ -2,7 +2,7 @@ import Foundation
 
 /// Accumulates Azure OpenAI Responses-style SSE JSON events into a single turn result.
 public struct ResponsesStreamAccumulator: Sendable {
-    private(set) var result = StreamTurnResult()
+    public private(set) var result = StreamTurnResult()
 
     public init() {}
 
