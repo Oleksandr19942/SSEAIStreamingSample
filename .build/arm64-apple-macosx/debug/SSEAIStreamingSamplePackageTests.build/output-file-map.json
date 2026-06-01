@@ -1,0 +1,12 @@
+{
+  "": {
+    "swift-dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/master.swiftdeps"
+  },
+  "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.derived/runner.swift": {
+    "dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner.d",
+    "object": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner.swift.o",
+    "swiftmodule": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner~partial.swiftmodule",
+    "swift-dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner.swiftdeps",
+    "diagnostics": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner.dia"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "": {
+    "swift-dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/master.swiftdeps"
+  },
+  "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSEAIStreamEvent.swift": {
+    "dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent.d",
+    "object": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent.swift.o",
+    "swiftmodule": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent~partial.swiftmodule",
+    "swift-dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent.swiftdeps",
+    "diagnostics": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent.dia"
+  },
+  "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSELineBuffer.swift": {
+    "dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer.d",
+    "object": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer.swift.o",
+    "swiftmodule": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer~partial.swiftmodule",
+    "swift-dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer.swiftdeps",
+    "diagnostics": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer.dia"
+  },
+  "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/StreamingHTTPClient.swift": {
+    "dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient.d",
+    "object": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient.swift.o",
+    "swiftmodule": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient~partial.swiftmodule",
+    "swift-dependencies": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient.swiftdeps",
+    "diagnostics": "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient.dia"
+  }
+}

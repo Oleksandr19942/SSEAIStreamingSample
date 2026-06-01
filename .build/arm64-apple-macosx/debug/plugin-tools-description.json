@@ -1,0 +1,676 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.xctest/Contents/MacOS/SSEAIStreamingSamplePackageTests",
+      "packagePath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample",
+      "productName" : "SSEAIStreamingSamplePackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.SSEAIStreamingSample-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/sources",
+      "importPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSEAIStreamEvent.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSELineBuffer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/StreamingHTTPClient.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SSEAIStreamingSample",
+      "moduleOutputPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSample.swiftmodule",
+      "objects" : [
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent.swift.o",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer.swift.o",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/include/SSEAIStreamingSample-Swift.h",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sseaistreamingsample"
+      ],
+      "outputFileMapPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSample.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSEAIStreamEvent.swift",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSELineBuffer.swift",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/StreamingHTTPClient.swift"
+      ],
+      "tempsPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SSEAIStreamingSamplePackageTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/sources",
+      "importPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.derived/runner.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSampleTests.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SSEAIStreamingSamplePackageTests",
+      "moduleOutputPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSamplePackageTests.swiftmodule",
+      "objects" : [
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/include/SSEAIStreamingSamplePackageTests-Swift.h",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sseaistreamingsample"
+      ],
+      "outputFileMapPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSamplePackageTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.derived/runner.swift"
+      ],
+      "tempsPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.SSEAIStreamingSampleTests-arm64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/sources",
+      "importPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Tests/SSEAIStreamingSampleTests/SSEAIStreamingSampleTests.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSample.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "SSEAIStreamingSampleTests",
+      "moduleOutputPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSampleTests.swiftmodule",
+      "objects" : [
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/SSEAIStreamingSampleTests.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "arm64-apple-macosx14.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-Xfrontend",
+        "-enable-cross-import-overlays",
+        "-j8",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g",
+        "-package-name",
+        "sseaistreamingsample"
+      ],
+      "outputFileMapPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/SSEAIStreamingSampleTests.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules/SSEAIStreamingSampleTests.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Tests/SSEAIStreamingSampleTests/SSEAIStreamingSampleTests.swift"
+      ],
+      "tempsPath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "SSEAIStreamingSample" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SSEAIStreamingSample",
+      "-package-name",
+      "sseaistreamingsample",
+      "-c",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSEAIStreamEvent.swift",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSELineBuffer.swift",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/StreamingHTTPClient.swift",
+      "-I",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/include/SSEAIStreamingSample-Swift.h",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sseaistreamingsample",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SSEAIStreamingSamplePackageTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SSEAIStreamingSamplePackageTests",
+      "-package-name",
+      "sseaistreamingsample",
+      "-c",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.derived/runner.swift",
+      "-I",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/include/SSEAIStreamingSamplePackageTests-Swift.h",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sseaistreamingsample",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "SSEAIStreamingSampleTests" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "SSEAIStreamingSampleTests",
+      "-package-name",
+      "sseaistreamingsample",
+      "-c",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Tests/SSEAIStreamingSampleTests/SSEAIStreamingSampleTests.swift",
+      "-I",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/Modules",
+      "-target",
+      "arm64-apple-macosx14.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-Xfrontend",
+      "-enable-cross-import-overlays",
+      "-j8",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.0.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-package-name",
+      "sseaistreamingsample",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "SSEAIStreamingSample" : [
+
+    ],
+    "SSEAIStreamingSamplePackageTests" : [
+      "SSEAIStreamingSampleTests",
+      "SSEAIStreamingSample"
+    ],
+    "SSEAIStreamingSampleTests" : [
+      "SSEAIStreamingSample"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+    "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.derived/runner.swift" : {
+      "inputs" : [
+
+      ],
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.derived/runner.swift"
+        }
+      ]
+    }
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSEAIStreamEvent.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/SSELineBuffer.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Sources/SSEAIStreamingSample/StreamingHTTPClient.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/sources"
+    },
+    "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.derived/runner.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/sources"
+    },
+    "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSEAIStreamEvent.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/SSELineBuffer.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/StreamingHTTPClient.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.build/runner.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/SSEAIStreamingSampleTests.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSamplePackageTests.product/Objects.LinkFileList"
+    },
+    "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/Tests/SSEAIStreamingSampleTests/SSEAIStreamingSampleTests.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSampleTests.build/sources"
+    },
+    "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}
