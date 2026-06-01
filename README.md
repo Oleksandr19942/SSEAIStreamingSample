@@ -1,53 +1,96 @@
 # SSEAIStreamingSample
 
-Small, **public** Swift package that demonstrates patterns used in production iOS AI chat apps:
+Public Swift package with **production-grade patterns** used in a shipped App Store health AI app ([2ndOpinions](https://apps.apple.com/us/app/2ndopinions/id6560104742)).
 
-- consume **Server-Sent Events (SSE)** over `URLSession`
-- parse `data:` lines from streaming HTTP responses
-- surface **`response.output_text.delta`** events for live UI updates
+This is **not** proprietary app source code. It is a **clean-room reference implementation** of the iOS patterns that matter for streaming AI chat: the same architectural ideas as a large SwiftUI client, extracted into testable modules you can read on GitHub.
 
-This is a **sanitized educational sample** — not production app code. It mirrors the architecture of a real App Store health AI client (line buffering, delta parsing, async streaming) without proprietary business logic, keys, or backend coupling.
+Built by [Oleksandr Meteliev](https://github.com/Oleksandr19942).
 
-## Why it exists
+---
 
-Portfolio reference for recruiters and iOS engineers who want to see how streaming AI chat can be structured on iOS without opening a private repository.
+## Why this exists
 
-## Features
+Recruiters and iOS engineers often ask: *“Show me how you built streaming AI chat.”*  
+Most of that work lives in private repositories. This package demonstrates the **strong parts** without leaking business logic, API keys, or backend contracts.
 
-- `SSELineBuffer` — safe chunk → line reassembly
-- `SSEAIStreamParser` — JSON `data:` event parsing (Azure OpenAI Responses-style deltas)
-- `StreamingHTTPClient` — async byte/stream consumption with typed events
-- XCTest coverage for parser and buffer behavior
+---
+
+## Production patterns included
+
+### 1. Responses SSE accumulator
+`ResponsesStreamAccumulator` — parses Azure OpenAI **Responses API** stream events:
+
+- `response.output_text.delta` / refusal deltas  
+- `response.function_call_arguments.done` → tool calls  
+- `response.completed` / `response.failed` metadata  
+- `response_id` chaining for multi-turn conversations  
+
+### 2. Live UI preview from partial JSON
+`JSONMessagePreviewExtractor` — extracts the `"message"` field **while JSON is still streaming**, so the chat bubble updates before the model finishes the object. Hides raw `{` noise during streaming.
+
+### 3. Rate-limit resilient streaming
+`RateLimitRetryExecutor` + `StreamingHTTPClient` — retries **HTTP 429** with backoff (same idea as production `executeWithRateLimitRetry`).
+
+### 4. Tool-calling conversation loop
+`ToolCallingConversationLoop` — orchestrates:
+
+```
+stream turn → tool calls? → execute tools (cached) → stream again → final text
+```
+
+Includes:
+
+- **Tool output cache** (duplicate calls avoided)  
+- **Streaming preview** callbacks during deltas  
+- **Non-streaming recovery** when SSE ends without visible text but no terminal completion event  
+
+This mirrors the production `ChatAIConversationRunner` control flow.
+
+---
+
+## Module map
+
+| File | Responsibility |
+|------|----------------|
+| `ResponsesStreamAccumulator` | SSE JSON → `StreamTurnResult` |
+| `StreamingHTTPClient` | URLSession bytes + 429 retry |
+| `JSONMessagePreviewExtractor` | Partial JSON → user-visible text |
+| `ToolCallingConversationLoop` | Multi-turn tool loop |
+| `RateLimitRetryExecutor` | Backoff / retry policy |
+
+---
 
 ## Requirements
 
-- iOS 17+ / macOS 14+
-- Swift 5.9+
+- iOS 17+ / macOS 14+  
+- Swift 5.9+  
 
-## Usage (conceptual)
+## Tests
 
-```swift
-var request = URLRequest(url: streamURL)
-request.httpMethod = "POST"
-request.setValue("Bearer <token>", forHTTPHeaderField: "Authorization")
-request.setValue("text/event-stream", forHTTPHeaderField: "Accept")
-
-let client = StreamingHTTPClient()
-try await client.stream(request: request) { event in
-    switch event {
-    case .textDelta(let chunk):
-        print(chunk, terminator: "")
-    case .completed:
-        print("\nDone")
-    case .unknown:
-        break
-    }
-}
+```bash
+swift test
 ```
 
-## Related work
+Covers stream parsing, JSON preview extraction, tool loop behavior, and recovery heuristics.
 
-Built by [Oleksandr Meteliev](https://github.com/Oleksandr19942) while shipping **[2ndOpinions](https://apps.apple.com/us/app/2ndopinions/id6560104742)** — AI health app on the App Store.
+---
+
+## What is intentionally **not** here
+
+- Amplify / GraphQL / HealthKit / StoreKit (app-specific integrations)  
+- Medical record upload recovery (separate large subsystem)  
+- Encrypted API key handling  
+- Full UI layer (`ChatViewModel+Streaming`)  
+
+Those remain in the private production app. This repo shows the **core AI streaming engine patterns** that are hardest to fake on a resume.
+
+---
+
+## Related
+
+- [2ndOpinions on the App Store](https://apps.apple.com/us/app/2ndopinions/id6560104742)  
+- [StartupSoft case study](https://www.startupsoft.com/cases/2nd-opinion/)  
+- [Author GitHub profile](https://github.com/Oleksandr19942)
 
 ## License
 
