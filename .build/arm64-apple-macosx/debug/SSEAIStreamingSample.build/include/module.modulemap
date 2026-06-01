@@ -1,3 +1,0 @@
-module SSEAIStreamingSample {
-    header "/Users/oleksandr.metelev/Projects/SSEAIStreamingSample/.build/arm64-apple-macosx/debug/SSEAIStreamingSample.build/include/SSEAIStreamingSample-Swift.h"
-}
