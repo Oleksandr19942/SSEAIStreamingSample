@@ -13,11 +13,9 @@ public typealias StreamTurnHandler = @Sendable (
 @MainActor
 public struct ToolCallingConversationLoop {
     public let maxTurns: Int
-    public let previewExtractor: JSONMessagePreviewExtractor
 
-    public init(maxTurns: Int = 32, previewExtractor: JSONMessagePreviewExtractor = .init()) {
+    public init(maxTurns: Int = 32) {
         self.maxTurns = maxTurns
-        self.previewExtractor = previewExtractor
     }
 
     /// Mirrors production chat orchestration: stream → tools → stream again, with preview + recovery.
@@ -48,13 +46,13 @@ public struct ToolCallingConversationLoop {
                 ),
                 { delta in
                     attemptBuffer.append(delta)
-                    let preview = previewExtractor.streamingDisplayText(from: baseBuffer + attemptBuffer.text)
+                    let preview = StreamDisplayText.streamingPreview(from: baseBuffer + attemptBuffer.text)
                     if !preview.isEmpty {
                         onStreamingPreview(preview)
                     }
                 },
                 {
-                    let preview = previewExtractor.streamingDisplayText(from: baseBuffer)
+                    let preview = StreamDisplayText.streamingPreview(from: baseBuffer)
                     onRateLimitRetry(preview)
                 }
             )
@@ -77,7 +75,7 @@ public struct ToolCallingConversationLoop {
                !final.isEmpty,
                rawBuffer.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || final.count > rawBuffer.count {
                 rawBuffer = final
-                let preview = previewExtractor.streamingDisplayText(from: rawBuffer)
+                let preview = StreamDisplayText.streamingPreview(from: rawBuffer)
                 if !preview.isEmpty { onStreamingPreview(preview) }
             }
 
@@ -115,7 +113,7 @@ public struct ToolCallingConversationLoop {
             }
 
             return ConversationLoopResult(
-                displayText: previewExtractor.finalDisplayText(from: rawBuffer),
+                displayText: StreamDisplayText.finalDisplayText(from: rawBuffer),
                 responseID: turn.responseID
             )
         }
@@ -145,6 +143,28 @@ public struct ToolCallingConversationLoop {
         let hasBuffer = !buffer.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         let hasFinal = !(turn.finalOutputText?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
         return hasBuffer || hasFinal
+    }
+}
+
+enum StreamDisplayText {
+    static func streamingPreview(from raw: String) -> String {
+        let cleaned = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        if cleaned.hasPrefix("{") || cleaned.hasPrefix("```") {
+            return ""
+        }
+        return cleaned
+    }
+
+    static func finalDisplayText(from raw: String) -> String {
+        if let data = raw.data(using: .utf8),
+           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            for key in ["message", "text", "answer"] {
+                if let value = json[key] as? String, !value.isEmpty {
+                    return value
+                }
+            }
+        }
+        return streamingPreview(from: raw)
     }
 }
 

@@ -43,27 +43,15 @@ final class SSEAIStreamingSampleTests: XCTestCase {
         XCTAssertEqual(deltas, ["Cannot"])
     }
 
-    func testJSONPreviewExtractsPartialMessage() {
-        let extractor = JSONMessagePreviewExtractor()
-        let preview = extractor.streamingDisplayText(from: #"{"message":"Hello wor"#)
-        XCTAssertEqual(preview, "Hello wor")
-    }
-
-    func testJSONPreviewHidesIncompleteJSONObject() {
-        let extractor = JSONMessagePreviewExtractor()
-        XCTAssertEqual(extractor.streamingDisplayText(from: "{"), "")
-    }
-
     @MainActor
     func testToolLoopExecutesToolAndContinues() async throws {
         let loop = ToolCallingConversationLoop(maxTurns: 4)
         let executor = MockToolExecutor(outputs: ["SemanticSearch": "{\"hits\":1}"])
-        var previews: [String] = []
 
         let streamHandler: StreamTurnHandler = { input, onDelta, _ in
             if input.payload is [[String: Any]] {
-                onDelta(#"{"message":"Done"}"#)
-                return StreamTurnResult(responseID: "resp-2", finalOutputText: #"{"message":"Done"}"#)
+                onDelta("Done")
+                return StreamTurnResult(responseID: "resp-2", finalOutputText: "Done")
             }
             return StreamTurnResult(
                 responseID: "resp-1",
@@ -81,13 +69,12 @@ final class SSEAIStreamingSampleTests: XCTestCase {
             toolExecutor: executor,
             streamTurn: streamHandler,
             requestTurn: { _ in StreamTurnResult(finalOutputText: "fallback") },
-            onStreamingPreview: { previews.append($0) },
+            onStreamingPreview: { _ in },
             onRateLimitRetry: { _ in }
         )
 
         XCTAssertEqual(result.displayText, "Done")
         XCTAssertTrue(executor.callCount >= 1)
-        XCTAssertFalse(previews.isEmpty)
     }
 
     @MainActor

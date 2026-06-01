@@ -2,7 +2,7 @@
 
 Public Swift package with **production-grade patterns** used in a shipped App Store health AI app ([2ndOpinions](https://apps.apple.com/us/app/2ndopinions/id6560104742)).
 
-This is **not** proprietary app source code. It is a **clean-room reference implementation** of the iOS patterns that matter for streaming AI chat: the same architectural ideas as a large SwiftUI client, extracted into testable modules you can read on GitHub.
+This is **not** proprietary app source code. It is a **clean-room reference implementation** of the iOS patterns that matter for streaming AI chat and health workflows: the same architectural ideas as a large SwiftUI client, extracted into testable modules you can read on GitHub.
 
 Built by [Oleksandr Meteliev](https://github.com/Oleksandr19942).
 
@@ -25,26 +25,44 @@ Most of that work lives in private repositories. This package demonstrates the *
 - `response.completed` / `response.failed` metadata  
 - `response_id` chaining for multi-turn conversations  
 
-### 2. Live UI preview from partial JSON
-`JSONMessagePreviewExtractor` — extracts the `"message"` field **while JSON is still streaming**, so the chat bubble updates before the model finishes the object. Hides raw `{` noise during streaming.
-
-### 3. Rate-limit resilient streaming
+### 2. Rate-limit resilient streaming
 `RateLimitRetryExecutor` + `StreamingHTTPClient` — retries **HTTP 429** with backoff (same idea as production `executeWithRateLimitRetry`).
 
-### 4. Tool-calling conversation loop
+### 3. Tool-calling conversation loop
 `ToolCallingConversationLoop` — orchestrates:
 
 ```
 stream turn → tool calls? → execute tools (cached) → stream again → final text
 ```
 
-Includes:
+Includes tool output cache, streaming preview callbacks, and non-streaming recovery when SSE ends without visible text.
 
-- **Tool output cache** (duplicate calls avoided)  
-- **Streaming preview** callbacks during deltas  
-- **Non-streaming recovery** when SSE ends without visible text but no terminal completion event  
+### 4. Apple Health ↔ AI chat (HealthKit integration)
+Production connects **HealthKit on device** to **personalized AI answers**:
 
-This mirrors the production `ChatAIConversationRunner` control flow.
+```
+HealthKit reads → typed sync payload → backend snapshots
+       ↓
+GetLatestAppleHealthRecords (function tool) + SemanticSearch(AppleHealth)
+```
+
+Reference modules:
+
+- `AppleHealthAIToolDefinition` — model tool schema (`GetLatestAppleHealthRecords`, 14-day window)  
+- `HealthDataDomain` — heart, activity, sleep, nutrition, mobility, body, …  
+- `SemanticSearchScope` — unified search including `AppleHealth`  
+- `AIToolCatalog` — all **7 on-device tools** in the production runner  
+
+The app syncs dozens of metric families (HR, HRV, SpO₂, steps, sleep stages, nutrition, mobility, etc.) — not a toy `stepCount` demo.
+
+### 5. Resilient medical-record upload recovery
+`UploadBatchStateMachine` + `UploadRecovery` — S3 upload → GraphQL persistence with **orphan job recovery**:
+
+- **Orphan timeout** (3 min) when the app dies mid-upload  
+- **In-flight grace period** (2 min) so foreground GraphQL is not double-fired  
+- **Batch deduplication** keys and TTL pruning (7-day retention, max 50 batches)  
+
+Same decision logic as production medical-record uploads (background tasks + reconciliation).
 
 ---
 
@@ -54,9 +72,11 @@ This mirrors the production `ChatAIConversationRunner` control flow.
 |------|----------------|
 | `ResponsesStreamAccumulator` | SSE JSON → `StreamTurnResult` |
 | `StreamingHTTPClient` | URLSession bytes + 429 retry |
-| `JSONMessagePreviewExtractor` | Partial JSON → user-visible text |
 | `ToolCallingConversationLoop` | Multi-turn tool loop |
 | `RateLimitRetryExecutor` | Backoff / retry policy |
+| `AppleHealthAIToolDefinition` | HealthKit → AI tool bridge |
+| `SemanticSearchScope` / `AIToolCatalog` | Search + 7-tool surface |
+| `UploadBatchStateMachine` | Upload orphan recovery |
 
 ---
 
@@ -71,18 +91,18 @@ This mirrors the production `ChatAIConversationRunner` control flow.
 swift test
 ```
 
-Covers stream parsing, JSON preview extraction, tool loop behavior, and recovery heuristics.
+Covers SSE parsing, tool loop, Health AI tool definitions, and upload recovery state machine.
 
 ---
 
 ## What is intentionally **not** here
 
-- Amplify / GraphQL / HealthKit / StoreKit (app-specific integrations)  
-- Medical record upload recovery (separate large subsystem)  
+- Full `HealthKitService` queries (large, permission-heavy)  
+- Amplify / GraphQL / StoreKit implementations  
 - Encrypted API key handling  
-- Full UI layer (`ChatViewModel+Streaming`)  
+- Full SwiftUI chat layer  
 
-Those remain in the private production app. This repo shows the **core AI streaming engine patterns** that are hardest to fake on a resume.
+Those remain in the private production app. This repo shows **reference logic** for patterns that are hard to fake on a resume.
 
 ---
 
