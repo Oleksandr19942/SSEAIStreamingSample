@@ -47,7 +47,7 @@ public struct ResponsesStreamAccumulator: Sendable {
                let toolCall = extractToolCall(fromOutputItem: item) {
                 appendToolCall(toolCall)
             }
-        case "response.completed, response.failed":
+        case "response.completed", "response.failed", "response.incomplete", "response.cancelled":
             if let response = payload["response"] as? [String: Any] {
                 mergeCompletion(from: response)
             }

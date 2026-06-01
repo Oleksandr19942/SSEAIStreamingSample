@@ -13,6 +13,36 @@ final class SSEAIStreamingSampleTests: XCTestCase {
         XCTAssertEqual(accumulator.result.toolCalls.first?.name, "SemanticSearch")
     }
 
+    func testAccumulatorParsesCompletedResponse() {
+        var accumulator = ResponsesStreamAccumulator()
+        accumulator.consume(dataLine: #"data: {"type":"response.completed","response":{"id":"resp-99","status":"completed","output":[{"type":"message","content":[{"type":"output_text","text":"Final answer"}]}]}}"#)
+
+        XCTAssertEqual(accumulator.result.responseID, "resp-99")
+        XCTAssertEqual(accumulator.result.responseStatus, "completed")
+        XCTAssertEqual(accumulator.result.finalOutputText, "Final answer")
+        XCTAssertTrue(accumulator.result.hasOutputItems)
+        XCTAssertTrue(accumulator.result.eventTypes.contains("response.completed"))
+    }
+
+    func testAccumulatorParsesFailedResponse() {
+        var accumulator = ResponsesStreamAccumulator()
+        accumulator.consume(dataLine: #"data: {"type":"response.failed","response":{"id":"resp-fail","status":"failed"}}"#)
+
+        XCTAssertEqual(accumulator.result.responseID, "resp-fail")
+        XCTAssertEqual(accumulator.result.responseStatus, "failed")
+        XCTAssertTrue(accumulator.result.eventTypes.contains("response.failed"))
+    }
+
+    func testAccumulatorParsesRefusalDelta() {
+        var accumulator = ResponsesStreamAccumulator()
+        var deltas: [String] = []
+        accumulator.consume(dataLine: #"data: {"type":"response.refusal.delta","delta":"Cannot"}"#) { delta in
+            deltas.append(delta)
+        }
+
+        XCTAssertEqual(deltas, ["Cannot"])
+    }
+
     func testJSONPreviewExtractsPartialMessage() {
         let extractor = JSONMessagePreviewExtractor()
         let preview = extractor.streamingDisplayText(from: #"{"message":"Hello wor"#)
